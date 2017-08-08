@@ -9,6 +9,15 @@ public class MusicPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+
+    private void Awake()
+    {
         if (instance)
         {
             Destroy(gameObject);
@@ -18,10 +27,5 @@ public class MusicPlayer : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
