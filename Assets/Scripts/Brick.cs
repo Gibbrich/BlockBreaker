@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    public int MaxHits;
-    private int TimesHit;
+    public Sprite[] Sprites;
+    
+    private int maxHits;
+    private int timesHit;
     
     // Use this for initialization
     void Start()
     {
+        maxHits = Sprites.Length + 1;
     }
 
     // Update is called once per frame
@@ -19,6 +22,31 @@ public class Brick : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        TimesHit++;
+        if (tag.Equals("Breakable"))
+        {
+            HandleHits();
+        }
+    }
+
+    private void HandleHits()
+    {
+        timesHit++;
+        if (timesHit >= maxHits)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            LoadSprites();
+        }
+    }
+
+    private void LoadSprites()
+    {
+        int spriteIndex = timesHit - 1;
+        if (Sprites[spriteIndex])
+        {
+            GetComponent<SpriteRenderer>().sprite = Sprites[spriteIndex];
+        }
     }
 }

@@ -26,4 +26,9 @@ public class LevelManager : MonoBehaviour
         print("Quit requested");
         Application.Quit();
     }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

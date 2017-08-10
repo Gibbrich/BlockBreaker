@@ -350,9 +350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You lost
-
-    Don''t worry, you''ll succeed next time!'
+  m_Text: You lost!
 --- !u!222 &1042577523
 CanvasRenderer:
   m_ObjectHideFlags: 0

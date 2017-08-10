@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoseCollider : MonoBehaviour {
+public class LoseCollider : MonoBehaviour
+{
+    private LevelManager levelManager;
+    // Use this for initialization
+    void Start()
+    {
+        levelManager = FindObjectOfType<LevelManager>();
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
-	private void OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.gameObject.tag.Equals("Ball"))
-		{
-			FindObjectOfType<LevelManager>().LoadLevel("Lose");
-		}
-	}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Ball"))
+        {
+            levelManager.LoadLevel("Lose");
+        }
+    }
 }
