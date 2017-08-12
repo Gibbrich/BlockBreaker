@@ -17,13 +17,12 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(string name)
     {
-        print(string.Format("Level {0} load requested", name));
+        Brick.breakableCount = 0;
         SceneManager.LoadScene(name);
     }
 
     public void QuitRequest()
     {
-        print("Quit requested");
         Application.Quit();
     }
 
