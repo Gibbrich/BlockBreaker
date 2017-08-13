@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        Brick.breakableCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
